@@ -11,26 +11,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FitX">
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <!-- If you want LoginActivity to be the first screen -->
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--
- Your MainActivity will still be accessible,
-             but won’t open first anymore
-        -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+
+        <activity android:name=".GenderSelectActivity" android:exported="true"/>
+        <activity android:name=".GoalSelectionActivity" android:exported="true"/>
+        <activity android:name=".CurrentBodyActivity" android:exported="true"/>
+        <activity android:name=".TargetBodyActivity" android:exported="true"/>
+        <activity android:name=".FocusAreaActivity" android:exported="true"/>
+        <activity android:name=".MetricsInputActivity" android:exported="true"/>
+        <activity android:name=".MotivationsActivity" android:exported="true"/>
+        <activity android:name=".FitnessLevelActivity" android:exported="true"/>
+        <activity android:name=".HomeActivity" android:exported="false"/>
+
     </application>
 
 </manifest>

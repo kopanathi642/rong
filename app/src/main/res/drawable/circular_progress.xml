@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="270"
+    android:toDegrees="270">
+
+    <shape
+        android:innerRadiusRatio="3"
+        android:shape="ring"
+        android:thicknessRatio="8"
+        android:useLevel="true">
+
+        <!-- The gradient creates a nice "tail" effect -->
+        <gradient
+            android:angle="0"
+            android:endColor="#06B6D4"
+            android:startColor="#0006B6D4"
+            android:type="sweep"
+            android:useLevel="false" />
+
+        <!-- Fallback solid color if gradient fails -->
+        <solid android:color="#06B6D4"/>
+
+        <corners android:radius="10dp" />
+    </shape>
+</rotate>

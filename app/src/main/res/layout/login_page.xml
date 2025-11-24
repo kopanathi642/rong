@@ -15,17 +15,17 @@
         android:layout_height="wrap_content"
         android:text="Welcome To Fit X"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="15dp"/>
 
     <!-- Profile / App Logo -->
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:src="@drawable/app_logo"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/circle_background"
         android:scaleType="centerCrop"/>
 
@@ -33,18 +33,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Achieve Your Goals"
+        android:text="Achieve Your Fitness Goals"
         android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="25dp"/>
 
     <!-- Email Input -->
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/edittext_bg"
         android:drawableLeft="@drawable/baseline_person_24"
         android:drawablePadding="8dp"
@@ -58,7 +58,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:orientation="horizontal"
         android:background="@drawable/edittext_bg"
         android:gravity="center_vertical"
@@ -106,7 +106,7 @@
         android:text="Forgot Password?"
         android:textColor="#7D7DFF"
         android:textSize="16sp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="end"/>
 
     <!-- Login Button -->
@@ -130,31 +130,6 @@
         android:textSize="14sp"
         android:layout_marginTop="15dp"/>
 
-    <!-- Sign in with Email -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:background="@drawable/rounded_bg_gray"
-        android:layout_marginTop="15dp"
-        android:padding="10dp">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/gmail"
-            android:contentDescription="Email Login"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign in with Email"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:layout_marginStart="10dp"/>
-    </LinearLayout>
-
     <!-- Sign in with Google -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -176,7 +151,7 @@
             android:layout_height="wrap_content"
             android:text="Sign in with Google"
             android:textColor="@android:color/white"
-            android:textSize="16sp"
+            android:textSize="18sp"
             android:layout_marginStart="10dp"/>
     </LinearLayout>
 
@@ -205,13 +180,40 @@
             android:layout_marginStart="10dp"/>
     </LinearLayout>
 
+
+    <!-- Sign in with Email -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/rounded_bg_gray"
+        android:layout_marginTop="15dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/gmail"
+            android:contentDescription="Email Login"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in with Email"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginStart="10dp"/>
+    </LinearLayout>
+
+
     <!-- Sign Up -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Don't have an account? Sign Up"
         android:textColor="#7D7DFF"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:layout_marginTop="20dp"/>
 
 </LinearLayout>

@@ -7,11 +7,6 @@
         android:title="@string/menu_home" />
 
     <item
-        android:id="@+id/navigation_workouts"
-        android:icon="@drawable/ic_workouts"
-        android:title="@string/menu_workouts" />
-
-    <item
         android:id="@+id/navigation_training"
         android:icon="@drawable/ic_training"
         android:title="@string/menu_training" />

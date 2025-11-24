@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ruler dimensions -->
+    <dimen name="ruler_major_tick_width">2dp</dimen>
+    <dimen name="ruler_major_tick_height">40dp</dimen>
+    <dimen name="ruler_minor_tick_width">1dp</dimen>
+    <dimen name="ruler_minor_tick_height">20dp</dimen>
+    <dimen name="ruler_tick_spacing">5dp</dimen>
+    <dimen name="ruler_text_margin_top">8dp</dimen>
+    <dimen name="ruler_padding">120dp</dimen>
+</resources>

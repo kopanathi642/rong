@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/your_custom_background"
+    >
+
+    <!-- Heading -->
+    <TextView
+        android:id="@+id/txtHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Workout Focus"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#222222"
+        android:layout_marginTop="36dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:id="@+id/optionButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtHeading"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="180dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnBicep"
+            android:layout_width="180dp"
+            android:layout_height="47dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#6A6767"
+            android:text="Bicep"
+            android:textColor="#E7D3D3FF"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/btnTricep"
+            android:layout_width="180dp"
+            android:layout_height="47dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#6A6767"
+            android:text="tricep"
+            android:textColor="#E7D3D3FF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnAbs"
+            android:layout_width="180dp"
+            android:layout_height="47dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#6A6767"
+            android:text="Abs"
+            android:textColor="#E7D3D3FF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnLeg"
+            android:layout_width="180dp"
+            android:layout_height="47dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#6A6767"
+            android:text="Leg"
+            android:textColor="#E7D3D3FF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnFullBody"
+            android:layout_width="180dp"
+            android:layout_height="47dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#6A6767"
+            android:text="Full Body"
+            android:textColor="#E7D3D3"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+    <!-- Navigation Buttons -->
+
+    <ImageView
+        android:id="@+id/imgMaleCharacter"
+        android:layout_width="230dp"
+        android:layout_height="445dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="-15dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/your_female_character" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_margin="16dp">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:text="Back"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#A8A8A8"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="0dp"
+            android:layout_height="58dp"
+            android:layout_weight="1"
+            android:text="Next"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#3B82F6"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,78 +1,76 @@
 package com.example.fitx
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import androidx.fragment.app.Fragment
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.card.MaterialCardView
 
-class GenderSelectActivity : Fragment() {
+class GenderSelectActivity : AppCompatActivity() {
 
-    private lateinit var maleImage: ImageView
-    private lateinit var femaleImage: ImageView
-    private lateinit var maleHighlight: View
-    private lateinit var femaleHighlight: View
-    private lateinit var continueButton: Button
-    private var selectedGender: String? = null // To store the selected gender
+    private var selectedGender: String? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.gender_select, container, false)
+    // We use MaterialCardView now, not FrameLayout
+    private lateinit var cardMale: MaterialCardView
+    private lateinit var cardFemale: MaterialCardView
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Make sure this matches your XML filename (activity_gender_selection.xml)
+        setContentView(R.layout.gender_select)
 
-        // Initialize views
-        maleImage = view.findViewById(R.id.maleImage)
-        femaleImage = view.findViewById(R.id.femaleImage)
-        maleHighlight = view.findViewById(R.id.maleHighlight)
-        femaleHighlight = view.findViewById(R.id.femaleHighlight)
-        continueButton = view.findViewById(R.id.btnContinue) // Assumes you have a Button with this ID in your XML
+        // Find Views
+        cardMale = findViewById(R.id.cardMale)
+        cardFemale = findViewById(R.id.cardFemale)
+        val backButton = findViewById<MaterialButton>(R.id.back_button)
+        val nextButton = findViewById<MaterialButton>(R.id.next_button)
 
-        // Set click listeners for the gender images
-        maleImage.setOnClickListener {
-            setGenderSelection("male")
-        }
-        femaleImage.setOnClickListener {
-            setGenderSelection("female")
-        }
+        // Gender selection click listeners
+        cardMale.setOnClickListener { selectGender("Male") }
+        cardFemale.setOnClickListener { selectGender("Female") }
 
-        // Set click listener for the continue button
-        continueButton.setOnClickListener {
-            if (selectedGender != null) {
-                // Navigate to the next screen, which is your HomeActivity
-                val intent = Intent(activity, HomeActivity::class.java)
-                startActivity(intent)
-                activity?.finish() // Close the current activity so the user can't go back
+        // Back button
+        backButton.setOnClickListener { onBackPressed() }
+
+        // Next button → move to GoalSelectionActivity
+        nextButton.setOnClickListener {
+            if (selectedGender == null) {
+                Toast.makeText(this, "Please select a gender", Toast.LENGTH_SHORT).show()
             } else {
-                // You can add a Toast or a visual cue to tell the user to select a gender
-                // Toast.makeText(context, "Please select a gender", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, GoalSelectionActivity::class.java)
+
+                // Important: I changed the key to "USER_GENDER" to match your other activities
+                intent.putExtra("USER_GENDER", selectedGender)
+                startActivity(intent)
             }
         }
-
-        return view
     }
 
-    private fun setGenderSelection(gender: String) {
-        // Store the selected gender
+    private fun selectGender(gender: String) {
         selectedGender = gender
 
-        // Update the UI based on the selection
-        if (gender == "male") {
-            maleHighlight.visibility = View.VISIBLE
-            maleImage.alpha = 1.0f
-            femaleHighlight.visibility = View.GONE
-            femaleImage.alpha = 0.4f
-        } else { // It's "female"
-            femaleHighlight.visibility = View.VISIBLE
-            femaleImage.alpha = 1.0f
-            maleHighlight.visibility = View.GONE
-            maleImage.alpha = 0.4f
+        // Define Fit X Colors
+        val colorSelected = Color.parseColor("#B4F656") // Lime Green
+        val colorDefault = Color.parseColor("#333333")  // Dark Grey
+
+        if (gender == "Male") {
+            // Highlight Male
+            cardMale.strokeColor = colorSelected
+            cardMale.strokeWidth = 6 // Thicker border
+
+            // Reset Female
+            cardFemale.strokeColor = colorDefault
+            cardFemale.strokeWidth = 2 // Thin border
+        } else {
+            // Highlight Female
+            cardFemale.strokeColor = colorSelected
+            cardFemale.strokeWidth = 6
+
+            // Reset Male
+            cardMale.strokeColor = colorDefault
+            cardMale.strokeWidth = 2
         }
-        // Enable the continue button once a gender is selected
-        continueButton.isEnabled = true
     }
 }
